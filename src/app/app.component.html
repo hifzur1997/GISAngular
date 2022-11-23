@@ -1,5 +1,142 @@
-<div id="map" class="map"></div>
+  <div>
 
-<button class="map-controls-button" color="primary" mat-mini-fab (click)="openControls()">
-  <mat-icon>{{isControlsOpened ? 'expand_more' : 'expand_less'}}</mat-icon>
-</button>
+    <mat-toolbar color="primary">
+      <div fxShow="true" fxHide.gt-sm="true">
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+
+      <a mat-button class="companyName" routerLink="/">
+        <span>GIS India</span>
+      </a>
+
+      <!-- <span class="example-spacer"></span>
+      <div fxShow="true" fxHide.lt-md="true">
+        <a mat-button routerLink="/">Topographic Maps</a>
+        <a mat-button routerLink="/">Thematic</a>
+        <a mat-button routerLink="/">Navigation Charts</a>
+        <a mat-button routerLink="/">Cadastral Maps</a>
+      </div> -->
+
+    </mat-toolbar>
+    <mat-sidenav-container fxFlexFill>
+
+      <mat-sidenav
+        color="primary"
+        #sidenav
+        fxLayout="column"
+        mode="over"
+        opened="true"
+        fxHide.gt-sm="true"
+        class="sideNav-container"
+      >
+        <mat-list>
+          <div (click)="openDialog()">
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            fontIcon="home"
+            color="accent"
+            class="center-icon"
+          ></mat-icon>
+
+          <p class="mat-text-center" >Home</p>
+
+        </div>
+
+            <mat-icon
+              aria-hidden="false"
+              aria-label="Example home icon"
+              fontIcon="map"
+              color="accent"
+              class="center-icon"
+            ></mat-icon>
+
+          <p class="mat-text-center">Map</p>
+
+            <mat-icon
+              aria-hidden="false"
+              aria-label="Example home icon"
+              fontIcon="account_circle"
+              color="accent"
+              class="center-icon"
+            ></mat-icon>
+
+          <p class="mat-text-center">Actions</p>
+      
+            <mat-icon
+              aria-hidden="false"
+              aria-label="Example home icon"
+              fontIcon="my_location"
+              color="accent"
+              class="center-icon"
+            ></mat-icon>
+
+            <!-- <mat-list-item class="center-text"> Tracking </mat-list-item> -->
+
+          <p class="mat-text-center">Tracking</p>
+
+            <mat-icon
+              aria-hidden="false"
+              aria-label="Example home icon"
+              fontIcon="account_circle"
+              color="accent"
+              class="center-icon"
+            ></mat-icon>
+
+            <!-- <mat-list-item class="center-text"> Coverages </mat-list-item> -->
+
+          <p class="mat-text-center">Coverages</p>
+
+            <mat-icon
+              aria-hidden="false"
+              aria-label="Example home icon"
+              fontIcon="settings"
+              color="accent"
+              class="center-icon"
+            ></mat-icon>
+
+            <!-- <mat-list-item class="center-text"> Settings </mat-list-item> -->
+
+
+          <p class="mat-text-center">Settings</p>
+
+            <mat-icon
+              aria-hidden="false"
+              aria-label="Example home icon"
+              fontIcon="help"
+              color="accent"
+              class="center-icon"
+            ></mat-icon>
+
+            <!-- <mat-list-item class="center-text"> FAQs </mat-list-item> -->
+
+          <p class="mat-text-center">FAQs</p>
+
+          <!-- <button mat-button (click)="openDialog()">Open dialog</button> -->
+          <!-- <button class="open-button" onclick="openForm()">Open Form</button> -->
+
+          
+          
+
+          </mat-list>
+      </mat-sidenav>
+
+      <mat-sidenav-content fxFlexFill>
+        <div id="map" class="map"></div>
+        <button
+          class="map-controls-button"
+          color="primary"
+          mat-mini-fab
+          (click)="openControls()"
+        >
+          <mat-icon>{{
+            isControlsOpened ? "expand_more" : "expand_less"
+          }}</mat-icon>
+
+        </button>
+      </mat-sidenav-content>
+
+    </mat-sidenav-container>
+  </div>
